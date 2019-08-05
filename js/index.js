@@ -42,7 +42,7 @@ let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 //NAVIGATION
-let nav = document.querySelectorAll("nav a");
+let nav = document.querySelectorAll("a");
 
 nav[0].textContent = siteContent.nav[`nav-item-1`];
 nav[1].textContent = siteContent.nav[`nav-item-2`];
@@ -63,7 +63,7 @@ const knowles = document.createElement("a");
 knowles.textContent = "Knowles";
 
 //Adding new links to Nav
-const newNavLinks = document.querySelector("nav a");
+const newNavLinks = document.querySelector("nav");
 newNavLinks.prepend(beyonce);
 newNavLinks.appendChild(knowles);
 
@@ -118,6 +118,10 @@ const contactText = document.querySelectorAll('.contact p')
 contactText[0].textContent = siteContent['contact']['address'];
 contactText[1].textContent = siteContent['contact']['phone'];
 contactText[2].textContent = siteContent['contact']['email'];
+
+let addressArray = siteContent['contact']['address'].split(' ');
+addressArray.splice(4, 0, '\r\n');
+contactText[0].innerText = addressArray.join(' ');
 
 //FOOTER
 
